@@ -78,7 +78,7 @@ This repository now documents the target design for an **Integrated Guest House 
 - Real-time consolidated metrics across accommodation + restaurant + bar
 - Automated monthly report with:
   - Revenue by department and total
-  - Occupancy, ADR, RevPAR with month-over-month trends
+  - Occupancy, Average Daily Rate (ADR), Revenue Per Available Room (RevPAR) with month-over-month trends
   - Booking source breakdown
   - Top-selling items
   - Teller performance comparison
@@ -90,13 +90,13 @@ This repository now documents the target design for an **Integrated Guest House 
 - User management and pricing/menu management interfaces
 
 ## 5. Non-Functional Requirements
-- **Security**: RBAC, password hashing (bcrypt/argon2), TLS, encrypted sensitive data, audit trails
+- **Security**: Role-Based Access Control (RBAC), password hashing (bcrypt/argon2), Transport Layer Security (TLS), encrypted sensitive data, audit trails
 - **Availability**: target ≥99% uptime, offline queue/sync behavior for teller/receptionist workflows
-- **Performance**: room search < 2s, POS sync within 5 minutes
+- **Performance**: room search < 2s, Point of Sale (POS) sync within 5 minutes
 - **Scalability**: supports more rooms, OTAs, and branches
 - **Usability**: optimized counter workflows on tablet/desktop
 - **Backup/Recovery**: daily automated backups + disaster recovery plan
-- **Localization**: UGX support and optional multi-currency display
+- **Localization**: Ugandan Shilling (UGX) support and optional multi-currency display
 
 ## 6. High-Level Architecture
 1. Public website + OTA traffic enters booking engine/channel manager
@@ -126,7 +126,7 @@ This repository now documents the target design for an **Integrated Guest House 
 - Frontend: React/Next.js
 - Backend: Node.js (Express/NestJS) or Python (Django/FastAPI)
 - Database: PostgreSQL/MySQL
-- Channel manager: Cloudbeds/SiteMinder/Hotelogix
+- Channel manager (for OTA connectivity and inventory synchronization): Cloudbeds/SiteMinder/Hotelogix
 - Payments: Flutterwave/Pesapal
 - Notifications: SMS gateway + SMTP/SendGrid
 - Reporting: scheduled server-side jobs generating PDF/Excel
